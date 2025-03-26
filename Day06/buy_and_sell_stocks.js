@@ -49,6 +49,7 @@ function optimizedApproach (arr) {
     let min_stock_price = arr[0];
     let max_profit = null;
 
+    // MY CODE
     for (let i=1; i<arr.length; i++) {
         let curr_profit = arr[i] - min_stock_price;
         // updating max profit
@@ -59,6 +60,16 @@ function optimizedApproach (arr) {
         // updating the Min Price
         if (arr[i] < min_stock_price) {
             min_stock_price = arr[i];
+        }
+    }
+
+    // Class Code
+    for (let i=0; i<arr.length; i++) {
+        if (arr[i] < min_stock_price) {
+            min_stock_price = arr[i];
+        }
+        else if (arr[i] - min_stock_price > max_profit) {
+            max_profit = arr[i] - min_stock_price;
         }
     }
 
